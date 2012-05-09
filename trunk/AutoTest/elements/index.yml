@@ -4,6 +4,10 @@
 login_link:
     type: link
     name: tj_hi
+    
+login_link1:
+    type: link
+    name: tj_hi
 login_frame:
     type: frame
     src: /ptlogin2/
