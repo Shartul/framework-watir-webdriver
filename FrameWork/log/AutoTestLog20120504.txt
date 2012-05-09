@@ -1,0 +1,7 @@
+This log was created at 2012-05-04 19:32:24
+ 
+2012-05-04 19:32:24  according the yaml file to generate the elements hash
+2012-05-04 19:32:24  begin to load the yaml file where : F:/FrameWork/lib/../ui_elements/index.yml
+2012-05-04 19:32:26  begin to execute the case:test_login
+2012-05-04 19:32:31  --click the link with the porperty : .link(:class=>"mod_userinfo_login1")
+2012-05-04 19:32:31  --ERROR:undefined method `link' for nil:NilClass WHERE:F:/FrameWork/lib/operate.rb at line:21
