@@ -12,7 +12,6 @@ class AutoTest < Test::Unit::TestCase
     def self.startup
         $ui= ReadYaml.new("#{File.dirname(__FILE__)}/../elements/index.yml")
         $conf = Conf.new("#{File.dirname(__FILE__)}/../conf/conf.yml")
-        puts $conf.get_conf('browser', 'browser')
         $browser = eval("Watir::Browser.new :#{$conf.get_conf('browser', 'browser')}")
         $locat = Locat.new($ui,$browser)
     end
