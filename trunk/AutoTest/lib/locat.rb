@@ -5,7 +5,7 @@ require 'test/unit'
 require "#{File.dirname(__FILE__)}/read_yaml.rb"
 require "#{File.dirname(__FILE__)}/log.rb"
 
-class Locat < Test::Unit::TestCase
+class Locat 
     def initialize(ui)
         @ui = ui
     end
@@ -18,7 +18,6 @@ class Locat < Test::Unit::TestCase
         if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
             return eval("$browser#{@ui.get_porperty(element_name)}")
         else
-            #return
             puts "ERROR:can not find the element with the porperty:#{@ui.get_porperty(element_name)}"
             #$log.add_log("ERROR:can not locat the link with the porperty:#{@ui.get_porperty(element_name)}")
         end
