@@ -1,0 +1,14 @@
+# This is the config file
+database:
+    host: value
+    db_name: value
+    db_table: value
+    port: 3306
+    
+mail:
+    mail_from: autowang@tencent.com
+    password: auto@004
+    smtp: smtp.tencent.com
+    port: 25
+    host: send@tencent.com
+

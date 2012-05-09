@@ -1,0 +1,17 @@
+#每个元素的type字段必写，因为掉哪个方法有type决定
+#支持正则表达式作为属性 ，例如src: /xxxx/
+#如果需要通过上一层元素辅助定位，需要定义parent属性，例如:parent: xxx_frame
+login_link:
+    type: link
+    class: mod_userinfo_login1
+login_frame:
+    type: frame
+    src: /ptlogin2/
+login_username:
+    parent: login_frame
+    type: text_field
+    id: u
+    
+login_button:
+    type: button
+    id: xxxx
