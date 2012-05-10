@@ -1,14 +1,19 @@
-#encoding = utf-8
+require 'yaml'
 require 'rubygems'
 require 'watir-webdriver'
 require 'test/unit'
-require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
+require "#{File.dirname(__FILE__)}/../lib/read_yaml.rb"
 
-class Baidu < AutoTest
+class Baidu < Test::Unit::TestCase
+    
+    def self.startup
+        p 11111111
+        $ui = ReadYaml.new("#{File.dirname(__FILE__)}/../elements/index.yml")
+    end
     
     def test_index
-        $browser.goto 'http://baidu.com'
-        $locat.find_element('login_link').click
-        $browser.close
+        
+        p $ui.get_porperty('login_link')
     end
+
 end

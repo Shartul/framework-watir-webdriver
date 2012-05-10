@@ -16,11 +16,10 @@ class ReadYaml
     #功能说明：加载yaml文件,
     
     def load_yaml_file()
-        #$log.add_log("begin to load the yaml file where : #{@file_path}")
         file = File.open(@file_path)
         return YAML.load(file)
     rescue
-        #$log.add_log($!.to_s)
+        $log.add_log($!.to_s)
         Thread.exit
     end
     
@@ -67,7 +66,6 @@ class ReadYaml
     #功能说明：生存元素的hash表示：{element_name=>element_porperty}
     
     def generate_elements_hash()
-        #$log.add_log('according the yaml file to generate the elements hash')
         hash = load_yaml_file()
         $elements_hash = Hash.new
         hash.keys.each {|k|
@@ -85,11 +83,10 @@ class ReadYaml
         if $elements_hash.has_key?(element_name)
             return $elements_hash[element_name]
         else
-            #$log.add_log("--ERROR:can not find the element with the element_name : #{element_name}")
         end
     end
 end
-#
-#@element= ReadYaml.new("#{File.dirname(__FILE__)}/../conf/conf.yml")
-#puts @element.get_conf
+
+#@element= ReadYaml.new("#{File.dirname(__FILE__)}/../elements/index.yml")
+#puts @element.find_element('login_username')
 
