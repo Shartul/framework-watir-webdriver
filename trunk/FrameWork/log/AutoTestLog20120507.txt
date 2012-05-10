@@ -1,5 +1,0 @@
-This log was created at 2012-05-07 17:22:50
- 
-2012-05-07 17:22:50  according the yaml file to generate the elements hash
-2012-05-07 17:22:50  begin to load the yaml file where : F:/FrameWork/lib/../ui_elements/index.yml
-2012-05-07 17:22:50  begin to execute the case:test_login
