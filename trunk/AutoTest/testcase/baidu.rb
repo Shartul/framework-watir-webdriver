@@ -10,5 +10,5 @@ class Baidu < AutoTest
         $locat.find_element('login_link').click
         $browser.close
     end
-
+11
 end
