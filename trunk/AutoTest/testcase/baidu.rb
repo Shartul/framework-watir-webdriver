@@ -1,19 +1,14 @@
 require 'yaml'
 require 'rubygems'
 require 'watir-webdriver'
-require 'test/unit'
-require "#{File.dirname(__FILE__)}/../lib/read_yaml.rb"
+require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
 
-class Baidu < Test::Unit::TestCase
-    
-    def self.startup
-        p 11111111
-        $ui = ReadYaml.new("#{File.dirname(__FILE__)}/../elements/index.yml")
-    end
+class Baidu < AutoTest
     
     def test_index
-        
-        p $ui.get_porperty('login_link')
+        $browser.goto 'http://baidu.com'
+        $locat.find_element('login_link').click
+        $browser.close
     end
 
 end
