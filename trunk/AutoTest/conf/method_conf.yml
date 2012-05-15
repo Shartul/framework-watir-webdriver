@@ -1,35 +1,25 @@
 # Auto-generated template
-test_1:
+-
+  case_name: test_1
   run: Y
   point: 测试首页
-  result: 动态写入
-  runtime: 动态写入
-  error: 动态写入
-test_4:
+-
+  case_name: test_1
   run: Y
-  point: 测试首页
-  result: 动态写入
-  runtime: 动态写入
-  error: 动态写入
-test_2:
+  point: 22
+-
+  case_name: test_3
   run: Y
-  point: 测试首页
-  result: 动态写入
-  runtime: 动态写入
-  error: 动态写入
-test_3:
+  point: 1
+-
+  case_name: test_4
   run: Y
-  point: 测试首页
-  result: 动态写入
-  runtime: 动态写入
-  error: 动态写入
+  point: 1
+-
+  case_name: test_5
+  run: Y
+  point: 1
 
-test_5:
-  run: Y
-  point: 测试首页
-  result: 动态写入
-  runtime: 动态写入
-  error: 动态写入
     
 
 
