@@ -6,14 +6,7 @@ require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
 class Baidu < AutoTest
     
     def test_index
-        arr = %W[index tuangou]
-        begin
-            for a in arr
-                self.__send__(a)
-            end
-        rescue
-            p $!
-        end
+        puts 'tuangou'
     end
     
     
@@ -23,6 +16,6 @@ class Baidu < AutoTest
     end
     
     def tuangou
-        puts 'tuangou'
+        
     end
 end
