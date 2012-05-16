@@ -1,0 +1,3 @@
+This log was created at 2012-05-11 11:54:13
+ 
+2012-05-11 11:54:13  syntax error on line 24, col -1: `'

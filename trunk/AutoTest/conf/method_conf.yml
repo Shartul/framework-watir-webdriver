@@ -1,24 +1,13 @@
 # Auto-generated template
 -
-  case_name: test_1
+  case_name: a_1
   run: Y
   point: 测试首页
 -
-  case_name: test_1
+  case_name: a_2
   run: Y
   point: 22
--
-  case_name: test_3
-  run: Y
-  point: 1
--
-  case_name: test_4
-  run: Y
-  point: 1
--
-  case_name: test_5
-  run: Y
-  point: 1
+
 
     
 

@@ -17,14 +17,15 @@ class Conf
     end
     
     def get_methods
-        p method_arr = self.load_yaml_file
-#        arr = Array.new
-#        for a in method_arr
-#            if a['run'] == 'Y'
-#                arr << a['case_name']
-#            end
-#        end
-#        puts arr
+        methods = self.load_yaml_file
+        arr = Array.new
+        methods.each do |m|
+            if m['run'] == 'Y'
+                arr << m['case_name']
+            end
+        end
+        return arr
+        
     end
 end
 c = Conf.new("#{File.dirname(__FILE__)}/../conf/method_conf.yml")
