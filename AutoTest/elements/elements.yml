@@ -3,7 +3,6 @@
 #如果需要通过上一层元素辅助定位，需要定义parent属性，例如:parent: xxx_frame
 login_link:
     type: link
-<<<<<<< .mine
     name: tj_hi
     
 login_frame:
