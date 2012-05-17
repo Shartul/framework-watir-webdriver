@@ -1,10 +1,10 @@
 # Auto-generated template
 -
-  case_name: a_1
+  case_name: index
   run: Y
   point: 测试首页
 -
-  case_name: a_2
+  case_name: tuangou
   run: Y
   point: 22
 
