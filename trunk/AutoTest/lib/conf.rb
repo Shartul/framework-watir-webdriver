@@ -17,16 +17,25 @@ class Conf
     end
     
     def get_methods
-        methods = self.load_yaml_file
-        arr = Array.new
-        methods.each do |m|
+        method_yaml = self.load_yaml_file
+        methods = Array.new
+        method_yaml.each do |m|
             if m['run'] == 'Y'
-                arr << m['case_name']
+                methods << m['case_name']
             end
         end
-        return arr
-        
+        return methods
+    end
+    
+    def get_point(method_name)
+        method_yaml = self.load_yaml_file
+        method_yaml.each do |m|
+            if m['case_name'] == method_name
+                return m['point'].to_s
+            end
+        end
     end
 end
-c = Conf.new("#{File.dirname(__FILE__)}/../conf/method_conf.yml")
-c.get_methods
+
+method_conf = Conf.new("#{File.dirname(__FILE__)}/../conf/method_conf.yml")
+$methods = method_conf.get_methods

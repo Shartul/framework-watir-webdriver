@@ -89,10 +89,10 @@ class Report
     
     def reportBody(arr)
         for i in 1..arr.length
-            if arr[i-1][:result] == 'PASS'
+            if arr[i-1]['result'] == 'PASS'
                 @body = @body +"<tr class='pass_show'>
                     <td class=border_left width=10%><p class=normal_th>" + i.to_s + "</p></td>
-                    <td class=border_right width=68%><p class=normal_text>" + arr[i-1][:point] + "</p></td>
+                    <td class=border_right width=68%><p id=point_text>" + arr[i-1]['point'] + "</p></td>
                     <td class=border_right width=7%>
                         <div class=a_old>
                             <!-- <p>的id和p下面的div的id要处理成动态的，onclick中传入的参数是动态的 -->
@@ -100,29 +100,29 @@ class Report
                             </div>
                         </div>
                     </td>
-                    <td class=border_right width=15%><p class=normal_th>Runtime</p></td></tr>
+                    <td class=border_right width=15%><p class=normal_th>" + arr[i-1]['runtime'] + "</p></td></tr>
                 </tr>"
-            else if arr[i-1][:result] == 'FAIL'
+            else if arr[i-1]['result'] == 'FAIL'
                 @body = @body +"<tr class='fail_show'>
                     <td class=border_left width=10%><p class=normal_th>" + i.to_s + "</p></td>
-                    <td class=border_right width=68%><p class=normal_text>" + arr[i-1][:point] + "</p></td>
+                    <td class=border_right width=68%><p id=point_text>" + arr[i-1]['point'] + "</p></td>
                     <td class=border_right width=7%>
                         <div class=a_old>
                             <!-- <p>的id和p下面的div的id要处理成动态的，onclick中传入的参数是动态的 -->
                             <p id=b_" + i.to_s + " class=b_old onclick=getLog('b_" + i.to_s + "','c_" + i.to_s + "')><font class=fail_log>FAIL</font></p>
                             <div id=c_" + i.to_s + " class=c_old load=0>"
-                            if arr[i-1][:error] != nil
-                                @body = @body + "<div>errorMsg:" + arr[i-1][:error] + "</div>"
+                            if arr[i-1]['error'] != nil
+                                @body = @body + "<div>errorMsg:" + arr[i-1]['error'] + "</div>"
                             end
                             @body = @body + "</div>
                         </div>
                     </td>
-                    <td class=border_right width=15%><p class=normal_th>Runtime</p></td></tr>
+                    <td class=border_right width=15%><p class=normal_th>" + arr[i-1]['runtime'] + "</p></td></tr>
                 </tr>"
-                else if arr[i-1][:result] == 'SKIP'
+                else if arr[i-1]['result'] == 'SKIP'
                       @body = @body +"<tr class='skip_show'>
                         <td class=border_left width=10%><p class=normal_th>" + i.to_s + "</p></td>
-                        <td class=border_right width=68%><p class=normal_text>" + arr[i-1][:point] + "</p></td>
+                        <td class=border_right width=68%><p id=point_text>" + arr[i-1]['point'] + "</p></td>
                         <td class=border_right width=7%>
                             <div class=a_old>
                                 <!-- <p>的id和p下面的div的id要处理成动态的，onclick中传入的参数是动态的 -->
@@ -130,7 +130,7 @@ class Report
                                 </div>
                             </div>
                         </td>
-                        <td class=border_right width=15%><p class=normal_th>Runtime</p></td></tr>
+                        <td class=border_right width=15%><p class=normal_th>" + arr[i-1]['runtime'] + "</p></td></tr>
                     </tr>"
                 end
             end
@@ -172,16 +172,3 @@ class Report
     end
     
 end
-#arr = %w[point]
-arr = Array.new()
-arr1 = Hash.new
-arr1 = {:point=>'test1',:result=>'PASS',:error=>'sdgasdgweg'} 
-arr2 = {:point=>'test2',:result=>'FAIL',:error=>'can not find element by...'}
-arr3 = {:point=>'test3',:result=>'SKIP',:error=>'sdgasdgweg'}
-arr4 = {:point=>'test4',:result=>'FAIL',:error=>'can not find element by...'}
-arr << arr1
-arr << arr2
-arr << arr3
-arr << arr4
-nr = Report.new("test","win 7 & firefox3.6")
-nr.createReport(arr)
