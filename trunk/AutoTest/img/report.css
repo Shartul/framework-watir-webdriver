@@ -96,6 +96,12 @@ div {
     font-size: 12px;
     font-weight: normal;
 }
+#point_text {
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: normal;
+	text_align:left;
+}
 
 .normal_th {
     font-family: verdana;
