@@ -62,7 +62,6 @@ div {
 .c_new {
     display: block;
     width: 450;
-    height: 100;
     background: none repeat scroll 0 0 #ffffe1;
     border: 1px solid #FF4187;
     left: -250px;
@@ -96,7 +95,7 @@ div {
     font-size: 12px;
     font-weight: normal;
 }
-#point_text {
+.point_text {
     font-family: verdana;
     font-size: 12px;
     font-weight: normal;
