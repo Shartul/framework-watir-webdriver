@@ -37,5 +37,3 @@ class Conf
     end
 end
 
-method_conf = Conf.new("#{File.dirname(__FILE__)}/../conf/method_conf.yml")
-$methods = method_conf.get_methods

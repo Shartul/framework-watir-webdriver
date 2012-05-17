@@ -29,16 +29,24 @@ class AutoTest < Test::Unit::TestCase
                 for method in $methods
                     tempresult = Hash.new
                     begin
-                        tempresult['point'] = "Class：#{c} method：#{method}——" + $method_conf.get_point(method)
+                        tempresult['point'] = $method_conf.get_point(method)
                         begintime = Time.now    #获取case执行的开始时间
                         c.__send__(method)      #根据获取的case名称，执行case
                         endtime = Time.now      #获取case执行的结束时间
                         tempresult['result'] = 'PASS'
                         tempresult['runtime'] = (endtime - begintime).to_s   #计算case执行耗时
                     rescue
-                        tempresult['runtime'] = 'N'    #异常将执行时间设置为N
-                        tempresult['result'] = 'FAIL'  #异常将执行结果设置为FAIL
-                        tempresult['error'] = "Class:#{c} method:#{method}——" + $!
+                        tempresult['runtime'] = 'N'    #发生异常时将执行时间设置为N
+                        tempresult['result'] = 'FAIL'  #发生异常时将执行结果设置为FAIL
+                        str = ''
+                        for msg in $@                  #遍历错误信息数组
+                            if msg !~ /test\/unit/     #过滤掉test/unit的错误
+                                str = str + "</br>#{msg}"  #将错误信息拼接成字符串
+                            end
+                            
+                        end
+                        tempresult['error'] = "ErrMessage：</br>" + $! + "</br>ErrLocation：" + str
+                        
                     end
                     $results << tempresult
                 end
