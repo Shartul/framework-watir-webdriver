@@ -5,17 +5,15 @@ require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
 
 class Baidu < AutoTest
     
-    def test_index
-        puts 'tuangou'
-    end
     
-    
-    def index
+    def self.index
+        sleep 2
         a = 6/0
         p 'index'
     end
     
-    def tuangou
-        
+    def self.tuangou
+        p '222222222'
+        sleep 1
     end
 end
