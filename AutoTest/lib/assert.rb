@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'watir-webdriver'
 require 'test/unit'
-require "#{File.dirname(__FILE__)}/read_yaml.rb"
+require "#{File.dirname(__FILE__)}/elements.rb"
 require "#{File.dirname(__FILE__)}/log.rb"
 
 class Assert
