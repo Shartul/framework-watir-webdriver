@@ -18,9 +18,8 @@ class Locat
         if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
             return eval("$browser#{@ui.get_porperty(element_name)}")
         else
-            puts "ERROR:can not find the element with the porperty:#{@ui.get_porperty(element_name)}"
-            return
-            #$log.add_log("ERROR:can not locat the link with the porperty:#{@ui.get_porperty(element_name)}")
+            $log.add_log "ERROR:can not find the element with the porperty:[#{@ui.get_porperty(element_name)}]"
+            return $tempresult['error'] = "ErrMessage：</br>can not find the element with the porperty:[#{@ui.get_porperty(element_name)}]</br>"
         end
     end
 end

@@ -16,6 +16,7 @@ class ReadYaml
     #功能说明：加载yaml文件,
     
     def load_yaml_file()
+        $log.add_log('begin to load the elements yaml file')
         file = File.open(@file_path)
         return YAML.load(file)
     rescue
@@ -86,7 +87,4 @@ class ReadYaml
         end
     end
 end
-
-#@element= ReadYaml.new("#{File.dirname(__FILE__)}/../elements/index.yml")
-#puts @element.find_element('login_username')
 

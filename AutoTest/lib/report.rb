@@ -19,7 +19,6 @@ class Report
         strHour = t.hour.to_s.length==1? '0'+t.hour.to_s : t.hour.to_s
         strMin = t.min.to_s.length==1? '0'+t.min.to_s : t.min.to_s
         @fileName = file_path + @reportName + y + strMonth + strDay + strHour + strMin + '.html'
-        puts @executeTime
         @report = File.open(@fileName,'w')
     end
     
