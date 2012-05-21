@@ -1,15 +1,15 @@
 # Auto-generated template
 -
   case_name: baidu_index
-  run: Y
+  run: 0
   point: 测试百度首页能否正常访问
 -
   case_name: qq_tuan_index
-  run: N
+  run: 0
   point: 测试qq团购首页能否正常访问
 -
   case_name: visit_index
-  run: N
+  run: 1
   point: 测试qq团购详情页访问
 
 
