@@ -1,16 +1,15 @@
-# Auto-generated template
+# 请严格按照以下格式定义
+# run-必填，标识是否执行该测试方法，0表示不执行，1表示执行
+# point：对测试方法的辅助说明，可以理解为测试用例的title
 -
-  case_name: baidu_index
-  run: 0
-  point: 测试百度首页能否正常访问
--
-  case_name: qq_tuan_index
-  run: 0
-  point: 测试qq团购首页能否正常访问
--
-  case_name: visit_index
+  case_name: login
   run: 1
-  point: 测试qq团购详情页访问
+  point: 测试QQ团购首页登录
+-
+  case_name: city_life
+  run : 1
+  point: 访问网购商品频道页
+
 
 
     
