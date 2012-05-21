@@ -20,7 +20,16 @@ class Assert
         if a == b
             return $tempresult['result'] = 'PASS'
         else
-            $tempresult['error'] = "ErrMessage：</br>expected[#{expect}],actual[#{actual}]"
+            $tempresult['error'] = "ErrMessage：</br>expected:[#{expect}],actual:[#{actual}]"
+            return $tempresult['result'] = 'FAIL'
+        end
+    end
+    
+    def assert_exists?(element_name)
+        if eval("$browser.find_element(#{element_name}).exists?")
+            return $tempresult['result'] = 'PASS'
+        else
+            $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{text}] in the current page"
             return $tempresult['result'] = 'FAIL'
         end
     end
