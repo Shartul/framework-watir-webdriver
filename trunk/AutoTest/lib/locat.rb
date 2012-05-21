@@ -23,4 +23,20 @@ class Locat
             return $tempresult['error'] = "ErrMessage：</br>can not find the element with the porperty:[#{@ui.get_porperty(element_name)}]</br>"
         end
     end
+    
+    def wait(element_name,timeout = 30)
+        time = 0
+        while(time <= timeout) 
+            if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
+                break
+            else
+                sleep 1
+                time = time + 1 
+                p time
+                if (time == timeout)
+                    $log.add_log "ErrMessage：#{time}s passed,the element[#{@ui.get_porperty(element_name)}] was not appear on current page"
+                end
+            end
+        end
+    end
 end

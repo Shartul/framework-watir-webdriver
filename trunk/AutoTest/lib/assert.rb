@@ -3,15 +3,12 @@ require 'watir-webdriver'
 require 'test/unit'
 
 class Assert
-    #    def initialize(ui)
-    #        @ui = ui
-    #    end
     
-    def assert_include?(text)
-        if eval("$browser.text =~ /#{text}/")
+    def assert_include?(m,n)
+        if eval("m =~ /#{n}/")
             return $tempresult['result'] = 'PASS'
         else
-            $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{text}] in the current page"
+            p $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{text}] in the current page"
             return $tempresult['result'] = 'FAIL'
         end
     end

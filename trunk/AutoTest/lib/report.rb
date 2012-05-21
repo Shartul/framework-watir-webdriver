@@ -38,7 +38,7 @@ class Report
                         <table width=100% border=0 cellpadding=2 cellspacing=2>
                           <tr>
                               <td style='width: 150px'><img src='../img/logo.jpg' width=150px height=50px></img></td>
-                              <td align=right><p class=title>QA Test Report</p></td>   
+                              <td align=right><p class=title>QA AutoTest Report</p></td>   
                           </tr>
                         </table>
                         
