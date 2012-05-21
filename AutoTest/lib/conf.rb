@@ -20,7 +20,7 @@ class Conf
         method_yaml = self.load_yaml_file
         methods = Array.new
         method_yaml.each do |m|
-            if m['run'] == 'Y'
+            if m['run'] == 1
                 methods << m['case_name']
             end
         end

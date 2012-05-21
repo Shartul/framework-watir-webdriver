@@ -15,6 +15,7 @@ class Locat
     #参数说明：
     #element_name：yaml中管理的元素名称
     def find_element(element_name)
+        $log.add_log("locat the element with the porperty:[#{@ui.get_porperty(element_name)}]")
         if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
             return eval("$browser#{@ui.get_porperty(element_name)}")
         else
