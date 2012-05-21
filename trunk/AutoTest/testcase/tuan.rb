@@ -7,7 +7,7 @@ class Tuan < AutoTest
         $browser.goto 'http://tuan.qq.com'
         $locat.find_element('login_link').click;
         $locat.find_element('login_username').set('383145138')
-        $locat.find_element('login_password').set('auto@001') #QQ密码
+        $locat.find_element('login_password').set('xxx') #QQ密码
         $locat.find_element('login_button').click
         $locat.wait('login_out')
         $assert.assert_include?($browser.text,'退出')
