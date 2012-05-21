@@ -1,24 +1,30 @@
 #每个元素的type字段必写，因为掉哪个方法有type决定
 #支持正则表达式作为属性 ，例如src: /xxxx/
 #如果需要通过上一层元素辅助定位，需要定义parent属性，例如:parent: xxx_frame
-zone_link:
+login_link:
     type: link
-    name: tj_hi
-    
+    text: 请登录xxx
 login_frame:
     type: frame
     src: /ptlogin2/
-    
 login_username:
     parent: login_frame
     type: text_field
     id: u
-    
+login_password:
+    parent: login_frame
+    type: text_field
+    id: p
 login_button:
+    parent: login_frame
     type: button
-    id: xxxx
-    name: tj_hi
-detail_link:
+    id: login_button
+login_out:
     type: link
-    text: /请登录/
+    text: 退出
+shop_on_line_goods:
+    type: link
+    text: 网购商品
+    
+
 
