@@ -3,7 +3,7 @@ require 'rubygems'
 require 'watir-webdriver'
 require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
 class Tuan < AutoTest
-    def self.login
+    def login
         $browser.goto 'http://tuan.qq.com'
         $locat.find_element('login_link').click;
         $locat.find_element('login_username').set('383145138')
@@ -13,7 +13,7 @@ class Tuan < AutoTest
         $assert.assert_include?($browser.text,'退出')
     end
     
-    def self.city_life
+    def city_life
         $browser.goto 'http://tuan.qq.com'
         $locat.find_element('shop_on_line_goods').click
         $assert.assert_include?($browser.url,'channelid=14')
