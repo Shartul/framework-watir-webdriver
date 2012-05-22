@@ -66,7 +66,7 @@ at_exit do
             for method in $methods
                 begin
                     AutoTest.new.before_method(method)
-                    c.__send__(method)                                       #根据获取的case名称，执行case
+                    c.new.__send__(method)                                       #根据获取的case名称，执行case
                     AutoTest.new.after_method
                 rescue
                     AutoTest.new.when_expection_do
