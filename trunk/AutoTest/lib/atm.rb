@@ -7,7 +7,7 @@ require "#{File.dirname(__FILE__)}/../lib/log.rb"
 require "#{File.dirname(__FILE__)}/../lib/report.rb"
 require "#{File.dirname(__FILE__)}/../lib/assert.rb"
 
-class AutoTest 
+class ATM 
     
     #运行于所有测试方法之前
     def before_test
@@ -17,9 +17,9 @@ class AutoTest
         $locat = Locat.new($ui)                                                             #创建对象定位器实例
         $assert = Assert.new                                                                #创建断言类实例
         $results = Array.new                                                                #测试结果存放数组
-        $method_conf = Conf.new("#{File.dirname(__FILE__)}/../conf/case_conf.yml")        #load测试方法配置文件yaml
+        $method_conf = Conf.new("#{File.dirname(__FILE__)}/../conf/case_conf.yml")          #load测试方法配置文件yaml
         $methods = $method_conf.get_methods                                                 #获取需要执行的所有测试方法
-        $report = Report.new('QQ团购',$conf.get_conf('browser', 'browser'))                 #创建报告实例
+        $report = Report.new('QQ团购',$conf.get_conf('browser', 'browser'))                  #创建报告实例,可以在这里指定项目名称（第一个参数）
     end
     
     #运行于每个测试方法之前
@@ -52,6 +52,7 @@ class AutoTest
                 str = str + "</br>#{msg}"                                   #将错误信息拼接成字符串
             end
         end
+        p $!
         errmsg = $!.to_s.sub('<','&lt').sub('>','&gt')
         $tempresult['error'] = $tempresult['error'] != nil ? ($tempresult['error'] + errmsg + "</br>ErrLocation：" + str) : ("ErrMessage：</br>" + $!.to_s + "</br>ErrLocation：" + str)
         $log.add_log($!.to_s + ' at ' + $@[0].to_s)
@@ -61,19 +62,20 @@ end
 
 at_exit do
     ObjectSpace.each_object(Class) do |c|
-        if c.superclass == AutoTest
-            AutoTest.new.before_test()                                      
+        if c.superclass == ATM
+            temp_obj = c.new
+            temp_obj.before_test()
             for method in $methods
                 begin
-                    AutoTest.new.before_method(method)
-                    c.new.__send__(method)                                       #根据获取的case名称，执行case
-                    AutoTest.new.after_method
+                    temp_obj.before_method(method)
+                    temp_obj.__send__(method)                                       #根据获取的case名称，执行case
+                    temp_obj.after_method
                 rescue
-                    AutoTest.new.when_expection_do
+                    temp_obj.when_expection_do
                 end
                 $results << $tempresult
             end
-            AutoTest.new.after_test()
+            temp_obj.after_test()
         end
     end
 end
