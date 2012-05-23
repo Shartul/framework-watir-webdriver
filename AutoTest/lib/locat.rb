@@ -24,7 +24,7 @@ class Locat
         end
     end
     
-    def wait(element_name,timeout = 30)
+    def wait(element_name,timeout = 5)
         time = 0
         while(time <= timeout) 
             if eval("$browser#{@ui.get_porperty(element_name)}.exist?")

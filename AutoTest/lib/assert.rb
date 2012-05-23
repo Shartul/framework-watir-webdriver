@@ -8,7 +8,7 @@ class Assert
         if eval("m =~ /#{n}/")
             return $tempresult['result'] = 'PASS'
         else
-            p $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{text}] in the current page"
+            $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{n}] in the current page"
             return $tempresult['result'] = 'FAIL'
         end
     end
