@@ -1,8 +1,8 @@
 #encoding = utf-8
 require 'rubygems'
 require 'watir-webdriver'
-require "#{File.dirname(__FILE__)}/../lib/auto_test.rb"
-class Tuan < AutoTest
+require "#{File.dirname(__FILE__)}/../lib/atm.rb"
+class Tuan < ATM
     def login
         $browser.goto 'http://tuan.qq.com'
         $locat.find_element('login_link').click;
