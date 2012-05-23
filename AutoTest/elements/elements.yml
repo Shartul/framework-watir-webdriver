@@ -3,7 +3,7 @@
 #如果需要通过上一层元素辅助定位，需要定义parent属性，例如:parent: xxx_frame
 login_link:
     type: link
-    text: 请登录xxx
+    text: 请登录
 login_frame:
     type: frame
     src: /ptlogin2/
