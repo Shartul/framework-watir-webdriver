@@ -1,7 +1,0 @@
-This log was created at 2012-05-21 19:29:16
- 
-2012-05-21 19:29:16  begin to load the elements yaml file
-2012-05-21 19:29:21  locat the element with the porperty:[.link(:text=>"请登录xxx")]
-2012-05-21 19:29:21  ERROR:can not find the element with the porperty:[.link(:text=>"请登录xxx")]
-2012-05-21 19:29:21  undefined method `click' for #<String:0x438e3a0> at testcase/tuan.rb:8:in `login'
-2012-05-21 19:29:27  locat the element with the porperty:[.link(:text=>"网购商品")]
