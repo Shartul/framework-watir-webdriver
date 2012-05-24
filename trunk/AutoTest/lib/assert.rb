@@ -1,6 +1,4 @@
 require 'rubygems'
-require 'watir-webdriver'
-require 'test/unit'
 
 class Assert
     
