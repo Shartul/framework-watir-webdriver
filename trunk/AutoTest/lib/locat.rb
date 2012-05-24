@@ -1,7 +1,6 @@
 #encoding = utf-8
 require 'rubygems'
 require 'watir-webdriver'
-require 'test/unit'
 require "#{File.dirname(__FILE__)}/read_yaml.rb"
 require "#{File.dirname(__FILE__)}/log.rb"
 
@@ -24,7 +23,7 @@ class Locat
         end
     end
     
-    def wait(element_name,timeout = 5)
+    def wait(element_name,timeout = 30)
         time = 0
         while(time <= timeout) 
             if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
