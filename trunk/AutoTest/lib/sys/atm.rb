@@ -1,23 +1,23 @@
 #encoding = utf-8
 require 'rubygems'
-require "#{File.dirname(__FILE__)}/../lib/read_yaml.rb"
-require "#{File.dirname(__FILE__)}/../lib/locat.rb"
-require "#{File.dirname(__FILE__)}/../lib/conf.rb"
-require "#{File.dirname(__FILE__)}/../lib/log.rb"
-require "#{File.dirname(__FILE__)}/../lib/report.rb"
-require "#{File.dirname(__FILE__)}/../lib/assert.rb"
+require "#{File.dirname(__FILE__)}/read_yaml.rb"
+require "#{File.dirname(__FILE__)}/locat.rb"
+require "#{File.dirname(__FILE__)}/conf.rb"
+require "#{File.dirname(__FILE__)}/log.rb"
+require "#{File.dirname(__FILE__)}/report.rb"
+require "#{File.dirname(__FILE__)}/assert.rb"
 
 class ATM 
     
     #运行于所有测试方法之前
     def before_test
         $log = Log.new('ERR')                                                               #创建log对象实例
-        $ui= ReadYaml.new("#{File.dirname(__FILE__)}/../elements/elements.yml")             #load元素对象管理的yaml文件
-        $conf = Conf.new("#{File.dirname(__FILE__)}/../conf/conf.yml")                      #创建配置文件读取实例
+        $ui= ReadYaml.new("#{File.dirname(__FILE__)}/../../elements/elements.yml")             #load元素对象管理的yaml文件
+        $conf = Conf.new("#{File.dirname(__FILE__)}/../../conf/conf.yml")                      #创建配置文件读取实例
         $locat = Locat.new($ui)                                                             #创建对象定位器实例
         $assert = Assert.new                                                                #创建断言类实例
         $results = Array.new                                                                #测试结果存放数组
-        $method_conf = Conf.new("#{File.dirname(__FILE__)}/../conf/case_conf.yml")          #load测试方法配置文件yaml
+        $method_conf = Conf.new("#{File.dirname(__FILE__)}/../../conf/case_conf.yml")          #load测试方法配置文件yaml
         $methods = $method_conf.get_methods                                                 #获取需要执行的所有测试方法
         $report = Report.new('QQ团购',$conf.get_conf('browser', 'browser'))                  #创建报告实例,可以在这里指定项目名称（第一个参数）
     end

@@ -162,7 +162,7 @@ class Report
     end
     
     def createReport(arr)
-        self.formatReportName("#{File.dirname(__FILE__)}/../report/")
+        self.formatReportName("#{File.dirname(__FILE__)}/../../report/")
         self.reportHead
         self.reportBody(arr)
         self.reportFoot
