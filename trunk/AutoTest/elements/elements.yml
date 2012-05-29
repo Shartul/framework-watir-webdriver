@@ -26,5 +26,8 @@ shop_on_line_goods:
     type: link
     text: 网购商品
     
+city_life:
+    type: link/text_field
+    text: 城市生活
 
 
