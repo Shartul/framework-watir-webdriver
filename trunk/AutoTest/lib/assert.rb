@@ -38,6 +38,5 @@ class Assert
                 return $tempresult['result'] = 'FAIL'
             end
         end
-        
     end
 end
