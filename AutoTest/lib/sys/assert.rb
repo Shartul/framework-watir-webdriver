@@ -3,7 +3,7 @@ require 'rubygems'
 class Assert
     
     def assert_include?(m,n)
-        if eval("m =~ /#{n}/")
+        if m =~ /#{n}/
             return $tempresult['result'] = 'PASS'
         else
             $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{n}] in the current page"
@@ -12,10 +12,10 @@ class Assert
     end
     
     def assert_equal?(expect,actual)
-        if a == b
+        if expect == actual
             return $tempresult['result'] = 'PASS'
         else
-            $tempresult['error'] = "ErrMessage：</br>expected:[#{expect}],actual:[#{actual}]"
+            $tempresult['error'] = "ErrMessage：</br>expected:[#{actual}],actual:[#{expect}]"
             return $tempresult['result'] = 'FAIL'
         end
     end
