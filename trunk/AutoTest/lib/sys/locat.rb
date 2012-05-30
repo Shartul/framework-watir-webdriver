@@ -26,13 +26,13 @@ class Locat
     def wait(element_name,timeout = 30)
         time = 0
         while(time <= timeout) 
-            if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
+            if eval("$browser#{@ui.get_porperty(element_name)}.exist? && $locat.find_element('#{element_name}').wait_until_present(#{timeout})")
                 break
             else
                 sleep 1
                 time = time + 1 
                 if (time == timeout)
-                    $log.add_log "ErrMessage：#{time}s passed,the element[#{@ui.get_porperty(element_name)}] was not appear on current page"
+                    $log.add_log "ErrMessage：#{timeout}s passed,the element[#{@ui.get_porperty(element_name)}] was not appear on current page"
                 end
             end
         end
