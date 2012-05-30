@@ -31,7 +31,6 @@ class Locat
             else
                 sleep 1
                 time = time + 1 
-                p time
                 if (time == timeout)
                     $log.add_log "ErrMessage：#{time}s passed,the element[#{@ui.get_porperty(element_name)}] was not appear on current page"
                 end
