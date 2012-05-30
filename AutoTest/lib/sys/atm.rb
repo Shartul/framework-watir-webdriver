@@ -52,9 +52,8 @@ class ATM
                 str = str + "</br>#{msg}"                                   #将错误信息拼接成字符串
             end
         end
-        p $!
         errmsg = $!.to_s.sub('<','&lt').sub('>','&gt')
-        $tempresult['error'] = $tempresult['error'] != nil ? ($tempresult['error'] + errmsg + "</br>ErrLocation：" + str) : ("ErrMessage：</br>" + $!.to_s + "</br>ErrLocation：" + str)
+        $tempresult['error'] = $tempresult['error'] != nil ? ($tempresult['error'] + errmsg + "</br>ErrLocation：" + str) : ("ErrMessage：</br>" + errmsg + "</br>ErrLocation：" + str)
         $log.add_log($!.to_s + ' at ' + $@[0].to_s)
         $browser.close                                                      #发生异常时，关闭浏览器
     end
