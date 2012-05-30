@@ -21,10 +21,10 @@ class Assert
     end
     
     def assert_exists?(element_name)
-        if eval("$browser.find_element(#{element_name}).exists?")
+        if eval("$locat.find_element('#{element_name}').exists?")
             return $tempresult['result'] = 'PASS'
         else
-            $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{text}] in the current page"
+            $tempresult['error'] = "ErrMessage：</br>can not find the expect element:[#{element_name}] in the current page"
             return $tempresult['result'] = 'FAIL'
         end
     end
