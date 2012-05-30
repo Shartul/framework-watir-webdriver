@@ -7,11 +7,11 @@ login_link:
 login_frame:
     type: frame
     src: /ptlogin2/
-login_username:
+login_username_text_field:
     parent: login_frame
     type: text_field
     id: u
-login_password:
+login_password_text_field:
     parent: login_frame
     type: text_field
     id: p
@@ -19,15 +19,30 @@ login_button:
     parent: login_frame
     type: button
     id: login_button
-login_out:
+login_out_link:
     type: link
     text: 退出
-shop_on_line_goods:
+email_subsrcibe_link:
     type: link
-    text: 网购商品
-    
-city_life:
-    type: link/text_field
-    text: 城市生活
+    href: /subscribe/
+pop_subsrcibe_div:
+    type: div
+    class: mod_pop_wrap    
+pop_subscribe_link:
+    type: link    
+    text: 立即订阅
+    index: 1
+pop_subscribe_success_div:
+    type: div
+    id: SubscribeFlow_alertPopup
+my_email_checkbox:
+    type: span
+    id: sub_option_mail
+my_paipai_checkbox:
+    type: span
+    id: sub_option_paipai   
+my_subscribe_link:
+    type: span
+    class: save      
 
 
