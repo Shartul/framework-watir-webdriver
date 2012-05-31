@@ -22,16 +22,19 @@ function selectAll(passName, failName, skipName){
     var skip = document.getElementsByClassName(skipName);
     if (fail.length != 0) {
         for (var j = 0; j <= fail.length; j++) {
+			j = 0;
             fail[0].className = "fail_show";
         }
     }
     if (skip.length != 0) {
         for (var k = 0; k <= skip.length; k++) {
+			k = 0;
             skip[0].className = "skip_show";
         }
     }
     if (pass.length != 0) {
         for (var i = 0; i <= pass.length; i++) {
+			i = 0;
             pass[0].className = "pass_show";
         }
     }
@@ -46,16 +49,19 @@ function selectPass(passName, failName, skipName){
     var skip = document.getElementsByClassName(skipName);
     if (fail.length != 0) {
         for (var i = 0; i <= fail.length; i++) {
+			i = 0;
             fail[0].className = "fail_not_show";
         }
     }
     if (skip.length != 0) {
         for (var j = 0; j <= skip.length; j++) {
+			j = 0;
             skip[0].className = "skip_not_show";
         }
     }
     if (pass.length != 0) {
         for (var k = 0; k <= pass.length; k++) {
+			k = 0;
             pass[0].className = "pass_show";
         }
     }
@@ -68,16 +74,19 @@ function selectFail(passName, failName, skipName){
     var skip = document.getElementsByClassName(skipName);
     if (fail.length != 0) {
         for (var k = 0; k <= fail.length; k++) {
+			k = 0;
             fail[0].className = "fail_show";
         }
     }
     if (skip.length != 0) {
         for (var j = 0; j <= skip.length; j++) {
+			j = 0;
             skip[0].className = "skip_not_show";
         }
     }
     if (pass.length != 0) {
         for (var i = 0; i <= pass.length; i++) {
+			i = 0;
             pass[0].className = "pass_not_show";
         }
     }
@@ -89,16 +98,19 @@ function selectSkip(passName, failName, skipName){
     var skip = document.getElementsByClassName(skipName);
     if (fail.length != 0) {
         for (var j = 0; j <= fail.length; j++) {
+			j = 0;
             fail[0].className = "fail_not_show";
         }
     }
     if (skip.length != 0) {
         for (var k = 0; k <= skip.length; k++) {
+			k = 0;
             skip[0].className = "skip_show";
         }
     }
     if (pass.length != 0) {
         for (var i = 0; i <= pass.length; i++) {
+			i = 0;
             pass[0].className = "pass_not_show";
         }
     }
