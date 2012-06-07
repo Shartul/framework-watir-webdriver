@@ -21,7 +21,7 @@ class Assert
     end
     
     def assert_exists?(element_name)
-        if eval("$locat.find_element('#{element_name}').exists?")
+        if $locat.find_element('#{element_name}').exists?
             return $tempresult['result'] = 'PASS'
         else
             $tempresult['error'] = "ErrMessage：</br>can not find the expect element:[#{element_name}] in the current page"
