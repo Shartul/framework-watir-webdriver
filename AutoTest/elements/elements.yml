@@ -43,6 +43,16 @@ my_paipai_checkbox:
     id: sub_option_paipai   
 my_subscribe_link:
     type: span
-    class: save      
-
-
+    class: save 
+index_qqtuan_mobile_link:
+    type: link
+    text: QQ团购手机版     
+index_mobile_page_window:
+    type: window
+    url: /com\/m/
+index_help_link:
+    type: link
+    title: 帮助
+index_help_page_window:
+    type: window
+    url: /learn\/help\/pay/
