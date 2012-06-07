@@ -15,7 +15,7 @@ class Locat
     #element_name：yaml中管理的元素名称
     def find_element(element_name)
         $log.add_log("locat the element with the porperty:[#{@ui.get_porperty(element_name)}]")
-        if eval("$browser#{@ui.get_porperty(element_name)}.exist?")
+        if eval("$browser#{@ui.get_porperty(element_name)}.exists?")
             return eval("$browser#{@ui.get_porperty(element_name)}")
         else
             $log.add_log "ERROR:can not find the element with the porperty:[#{@ui.get_porperty(element_name)}]"
