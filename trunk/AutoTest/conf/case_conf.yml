@@ -1,18 +1,38 @@
 # 请严格按照以下格式定义
 # run-必填，标识是否执行该测试方法，0表示不执行，1表示执行
-# point：对测试方法的辅助说明，可以理解为测试用例的title
+# point-必填，对测试方法的辅助说明，可以理解为测试用例的title
 -
-  case_name: login
+  case_name: test_login
   run: 1
   point: 测试QQ团购首页登录
+-  
+  case_name: test_login_out
+  run: 1
+  point: 测试首页登录后退出
 -
-  case_name: city_life
-  run : 1
-  point: 访问网购商品频道页
-
-
-
-    
+  case_name: subscibe_email_without_login
+  run: 1
+  point: 未登录订阅邮件和每日精选
+-
+  case_name: subscibe_email_from_index
+  run: 1
+  point: 首页入口-订阅邮件和每日精选
+-
+  case_name: unsubscribe_email  
+  run: 1
+  point: 退订邮件和每日精选
+-
+  case_name: subscibe_email_from_my
+  run: 1
+  point: 我的团购入口-订阅邮件和每日精选
+-
+  case_name: access_the_mobile_page
+  run: 1
+  point: 访问QQ团购手机版页面
+-
+  case_name: access_the_help_page
+  run: 1
+  point: 测试QQ团购首页帮助入口是否正确
 
 
 
