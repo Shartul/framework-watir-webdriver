@@ -7,6 +7,17 @@ class Assert
             return $tempresult['result'] = 'PASS'
         else
             $tempresult['error'] = "ErrMessage：</br>can not find the expect text:[#{n}] in the current page"
+            $log.add_log($tempresult['error'])
+            return $tempresult['result'] = 'FAIL'
+        end
+    end
+    
+    def assert_true?(express)
+        if express
+            return $tempresult['result'] = 'PASS'
+        else
+            $tempresult['error'] = "ErrMessage：</br>the express is false"
+            $log.add_log($tempresult['error'])
             return $tempresult['result'] = 'FAIL'
         end
     end
@@ -16,6 +27,7 @@ class Assert
             return $tempresult['result'] = 'PASS'
         else
             $tempresult['error'] = "ErrMessage：</br>expected:[#{actual}],actual:[#{expect}]"
+            $log.add_log($tempresult['error'])
             return $tempresult['result'] = 'FAIL'
         end
     end
@@ -25,6 +37,7 @@ class Assert
             return $tempresult['result'] = 'PASS'
         else
             $tempresult['error'] = "ErrMessage：</br>can not find the expect element:[#{element_name}] in the current page"
+            $log.add_log($tempresult['error'])
             return $tempresult['result'] = 'FAIL'
         end
     end
@@ -35,6 +48,7 @@ class Assert
                 return $tempresult['result'] = 'PASS'
             else
                 $tempresult['error'] = "ErrMessage：</br>not all the elements in the #{collection} is march the regular expression ：#{reg}"
+                $log.add_log($tempresult['error'])
                 return $tempresult['result'] = 'FAIL'
             end
         end
