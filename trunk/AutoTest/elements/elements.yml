@@ -56,3 +56,63 @@ index_help_link:
 index_help_page_window:
     type: window
     url: /learn\/help\/pay/
+index_detail_divs:
+    type: div
+    class: details_info
+    index: rand(5)   #随机获取0~5范围内的整数作为索引
+index_goto_look_link:
+    parent: index_detail_divs
+    type: link
+    class: going
+detail_page_window:    #详情页新窗口
+    type: window
+    url: /deal\/show/
+index_store_link:    #首页资源中店铺页入口链接
+    parent: index_detail_divs
+    type: link
+    href: /store/
+store_page_window:    #店铺页窗口
+    type: window
+    url: /store/
+index_service_index_link:   #首页资源中退款保证链接
+    parent: index_detail_divs
+    type: link
+    href: /service\/index/
+service_index_page_window:    #退款保障页窗口
+    type: window
+    url: /service\/index/
+detail_page_num_price_span:
+    type: span
+    class: num_price
+    index: 0
+detail_page_scrollTabBar_div:    #详情页浮层div
+    type: div
+    id: scrollButton
+detail_page_scrollTabBar_num_price_span:    #详情页浮层中的价格span
+    parent: detail_page_scrollTabBar_div
+    type: span
+    class: num_price
+detail_page_original_price_span:
+    type: span
+    class: original_price
+index_end_about_tencent_link:
+    type: link
+    text: 关于腾讯
+index_show_style_1to2_change_link:    #2宫格切换链接
+    type: link
+    id: a_change_to_list
+index_show_style_2to1_change_link:    #1宫格切换链接
+    type: link
+    id: a_change_to_big
+index_container_div:    #首页包裹资源的最外层div
+    type: div
+    id: div_container
+index_keybar_p:    #首页热门关键词筛选器
+    type: p
+    id: v:keyBar  
+index_areasbar_p:    #首页地区关键词筛选器
+    type: p
+    id: v:areasBar 
+index_region_search_result_window:    #首页地区筛选弹出的新窗口
+    type: window
+    url: /deal\/search/
