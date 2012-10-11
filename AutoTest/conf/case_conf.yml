@@ -33,6 +33,48 @@
   case_name: access_the_help_page
   run: 1
   point: 测试QQ团购首页帮助入口是否正确
-
-
-
+-
+  case_name: access_the_detail_page_by_random
+  run: 1
+  point: 随机访问首页精品频道前6单中某单资源的详情页
+-
+  case_name: access_the_store_page_by_random
+  run: 1
+  point: 随机访问首页精品频道前6单中某单资源的店铺页
+-
+  case_name: access_service_index_page_by_random
+  run: 1
+  point: 随机访问首页精品频道前6单中某单资源的退款保障页
+-
+  case_name: check_price_on_the_index_and_detail_page
+  run: 1
+  point: 检查列表页团购价、原价和详情页以及浮层的团购价、原价相等
+-
+  case_name: change_index_show_style
+  run: 1
+  point: 检查首页一宫格到两宫格的切换功能
+-
+  case_name: check_index_filter_display
+  run: 1
+  point: 检查精品首页热门关键词和地区筛选器显示正常
+-
+  case_name: index_search_by_region
+  run: 1
+  point: 精品页通过地区属性进行筛选
+-
+  case_name: index_channel_change
+  run: 1
+  point: 首页左侧导航频道页切换
+-
+  case_name: index_second_channel_change
+  run: 1
+  point: 通过首页左侧导航浮层中切换到对于二级类目
+-
+  case_name: access_buys_goods_channel
+  run: 1
+  point: 从首页顶部访问网购商品类目
+-
+  case_name: access_coupon_channel
+  run: 1
+  point: 从首页顶部导航访问优惠券类目
+  

@@ -1,6 +1,6 @@
 # This is the config file
 browser: 
-    browser: chrome
+    browser: firefox
 
 database:
     host: value
