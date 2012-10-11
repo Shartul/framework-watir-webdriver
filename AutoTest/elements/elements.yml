@@ -42,8 +42,8 @@ my_paipai_checkbox:
     type: span
     id: sub_option_paipai   
 my_subscribe_link:
-    type: span
-    class: save 
+    type: link
+    text: 保存 
 index_qqtuan_mobile_link:
     type: link
     text: QQ团购手机版     
@@ -56,14 +56,18 @@ index_help_link:
 index_help_page_window:
     type: window
     url: /learn\/help\/pay/
-index_detail_divs:
+index_detail_divs:    #一宫大图外层div，随机获取一个
     type: div
-    class: details_info
+    class: main_bar
     index: rand(5)   #随机获取0~5范围内的整数作为索引
-index_goto_look_link:
+index_goto_look_link:    #一宫去看看按钮
     parent: index_detail_divs
     type: link
     class: going
+index_title_link:    #一宫短标题
+    parent: index_detail_divs
+    type: link
+    class: c_tx2
 detail_page_window:    #详情页新窗口
     type: window
     url: /deal\/show/
@@ -116,3 +120,37 @@ index_areasbar_p:    #首页地区关键词筛选器
 index_region_search_result_window:    #首页地区筛选弹出的新窗口
     type: window
     url: /deal\/search/
+index_life_channel_change_link:    #首页左侧生活频道切换链接
+    type: link
+    class: nav_6
+life_service_link:    #生活频道页筛选器中生活服务链接
+    type: link
+    class: current
+    id: v:category_130000
+index_food_channel_link:    #首页左侧导航美食频道入口链接
+    type: link
+    class: nav_3
+index_left_leisure_meals_link:    #首页左侧导航中美食二级类目休闲餐点链接
+    type: link
+    href: /classid=110907/
+    text: 休闲餐点
+food_channel_leisure_meals_link:    #美食频道页筛选器中休闲餐点链接
+    type: link
+    class: current
+    id: v:category_110907
+food_channel_food_link:    #美食频道页筛选器中美食链接
+    type: link
+    class: current
+    id: v:category_110000
+index_buys_goods_channel_link:    #首页顶部网购商品链接
+    type: link
+    class: nav_a_1
+index_coupon_channel_link:    #首页顶部网购商品链接
+    type: link
+    class: nav_a_2
+next_page_link:    #翻页控件下一页链接
+    type: link
+    class: next
+coupon_big_item_div:    #优惠券频道大图div
+    type: div
+    class: chosen_item spcial_big
